@@ -1,0 +1,8 @@
+:local(.homepageContainer) {
+    display: flex;
+    display: -webkit-flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

@@ -18,8 +18,13 @@ function App() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const getAllUsers = async () => {
-    await dispatch(setUsers());
-    setLoading(false);
+    try {
+      await dispatch(setUsers());
+      setLoading(false);
+    } catch {
+      //error logged in dispatch, try fetching again
+      getAllUsers();
+    }
   };
   useEffect(() => {
     getAllUsers();

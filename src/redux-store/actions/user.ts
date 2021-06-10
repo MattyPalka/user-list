@@ -13,12 +13,13 @@ export const setUsers = () => {
       const { data } = await axios.get(
         "https://jsonplaceholder.typicode.com/users"
       );
-      return dispatch({
+      dispatch({
         type: SET_USERS,
         users: data,
       });
+      return Promise.resolve("OK");
     } catch (e) {
-      console.error(e);
+      return Promise.reject(e);
     }
   };
 };

@@ -8,7 +8,6 @@ import style from "./style.module.scss";
 
 const Homepage = (props: RouteProps) => {
   const users = useSelector((state: RootState) => state.users.filteredUsers);
-  console.log(users);
   return (
     <div className={style.homepageContainer}>
       <header>Users list</header>

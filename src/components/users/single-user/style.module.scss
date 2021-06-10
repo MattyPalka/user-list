@@ -1,0 +1,38 @@
+@import "../../../commons/styles/colors.module.scss";
+
+:local(.userListItem) {
+    font-weight: 700;
+
+    &::marker {
+        font-weight: 300;
+        color: #cdcdcd;
+    }
+    :local(.username) {
+        margin-left: 0.5rem;
+        font-weight: 300;
+        font-size: 0.9rem;
+        color: $primaryColor;
+        cursor: pointer;
+        position: relative;
+        &::after {
+            content: "click to get details";
+            position: absolute;
+            visibility: hidden;
+            width: max-content;
+            font-size: 0.8rem;
+            left: 102%;
+            top: -100%;
+            color: $primaryAccent;
+            background-color: white;
+            border: 1px solid $primaryAccent;
+            padding: 3px;
+            border-radius: 3px;
+        }
+
+        &:hover {
+            &::after {
+                visibility: visible;
+            }
+        }
+    }
+}

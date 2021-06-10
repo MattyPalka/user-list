@@ -1,0 +1,11 @@
+:local(.noUsersFoundInfo) {
+    margin: 16px 0;
+}
+
+:local(.usersListContainer) {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0;
+}

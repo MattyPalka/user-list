@@ -1,0 +1,36 @@
+$iPhonePlusWidth: 414px; // THIS INCLUDES XR and MAX
+$iPhoneXWidth: 375px; // THIS INCLUDES X / 6, 7, 8
+$iPhone5Width: 320px; // THIS INCLUDES 5, SE1, 12 MINI
+$iPadVerticalWidth: 768px;
+$iPadHorizontalWidth: 1024px;
+$desktop: 1300px;
+
+@mixin small-phone {
+    @media (max-width: #{$iPhone5Width}) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (max-width: #{$iPhonePlusWidth}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$iPadVerticalWidth}) {
+        @content;
+    }
+}
+
+@mixin horizontal-tablet {
+    @media (max-width: #{$iPadHorizontalWidth}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}

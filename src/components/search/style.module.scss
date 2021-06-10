@@ -1,0 +1,19 @@
+@import "../../commons/styles/mixins.module.scss";
+
+:local(.container) {
+    width: 33%;
+    min-width: 300px;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    @include tablet {
+        width: 66%;
+    }
+
+    @include phone {
+        width: 90%;
+    }
+}
+:local(.searchInput) {
+    height: 2rem;
+}

@@ -7,10 +7,14 @@ import { RootState } from "../../types/root-redux-state";
 import style from "./style.module.scss";
 
 const Homepage = (props: RouteProps) => {
+  // get filtered users stored in redux
   const users = useSelector((state: RootState) => state.users.filteredUsers);
+  
   return (
     <div className={style.homepageContainer}>
-      <header>Users list</header>
+      <header>
+        <h1>Users list</h1>
+      </header>
       <Search />
       <UsersList users={users} />
     </div>

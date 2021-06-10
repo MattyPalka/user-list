@@ -2,6 +2,7 @@ import axios from "axios";
 import { Dispatch } from "redux";
 
 export const SET_USERS = "SET_USERS";
+export const FILTER_USERS = "FILTER_USERS";
 
 /**
  * Get all user data and save it in redux state
@@ -25,6 +26,11 @@ export const setUsers = () => {
 };
 
 /**
- * Filter list of all users by their name
+ * Filter all users for given chunk of user names
+ * @param {string} searchValue values to filter for
+ * @returns
  */
-export const filterUsers = () => {};
+export const filterUsers = (searchValue: string) => {
+  return async (dispatch: Dispatch<any>) =>
+    dispatch({ type: FILTER_USERS, searchValue: searchValue.trim() });
+};

@@ -8,7 +8,7 @@ import ReduxThunk from "redux-thunk";
 import { Provider } from "react-redux";
 import userReducer from "./redux-store/reducers/user";
 
-// probably redux is an overkill for this side of the app, but if this is to be extended in the future
+// probably redux is an overkill for this size of the app, but if this is to be extended in the future
 // having a global store can be really useful
 
 const rootReducer = combineReducers({

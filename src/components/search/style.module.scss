@@ -1,4 +1,5 @@
 @import "../../commons/styles/mixins.module.scss";
+@import "../../commons/styles/colors.module.scss";
 
 :local(.container) {
     width: 33%;
@@ -19,6 +20,13 @@
 
     :local(.searchInput) {
         height: 2rem;
+        z-index: 1;
+        //this very little transparency fixes firefox styling for not having background
+        background-color: rgba(255, 255, 255, 0.000001);
+
+        border: 1px solid $dark;
+        border-radius: 3px;
+        padding: 0.1rem 0.5rem;
     }
 
     label {

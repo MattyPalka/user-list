@@ -12,6 +12,10 @@ export const FILTER_USERS = "FILTER_USERS";
 export const setUsers = () => {
   return async (dispatch: Dispatch<any>) => {
     try {
+      // this is fine here as the users collection has only 10 entries, if this was huge data set
+      // would do it differently, to just fetch parts of data and then fetch again if wanted to get detail on single user
+      // or just (depending on API / backend build for it) paginate the results and start fetching users based on filter field
+      // this API however have just one endpoint and this implementation offers fast search results
       const { data } = await axios.get(
         "https://jsonplaceholder.typicode.com/users"
       );
@@ -36,10 +40,16 @@ export const filterUsers = (
   searchValue: string,
   searchFields: SearchTypes[]
 ) => {
-  return async (dispatch: Dispatch<any>) =>
-    dispatch({
-      type: FILTER_USERS,
-      searchValue: searchValue.trim(),
-      searchFields,
-    });
+  return async (dispatch: Dispatch<any>) => {
+    try {
+      dispatch({
+        type: FILTER_USERS,
+        searchValue: searchValue.trim(),
+        searchFields,
+      });
+      return Promise.resolve("OK");
+    } catch (e) {
+      return Promise.reject(e);
+    }
+  };
 };

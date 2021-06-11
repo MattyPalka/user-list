@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUsers } from "./redux-store/actions/user";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -17,7 +17,8 @@ const routes = [
 function App() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
-  const getAllUsers = async () => {
+
+  const getAllUsers = useCallback(async () => {
     try {
       await dispatch(setUsers());
       setLoading(false);
@@ -25,10 +26,11 @@ function App() {
       //error logged in dispatch, try fetching again
       getAllUsers();
     }
-  };
+  }, [dispatch]);
+
   useEffect(() => {
     getAllUsers();
-  }, []);
+  }, [getAllUsers]);
   if (loading) {
     return <LoadingDots />;
   }

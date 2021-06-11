@@ -7,12 +7,13 @@ const Search = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState("");
   const [shrinkLabel, setShrinkLabel] = useState(false);
+
   useEffect(() => {
     // here filter users by set data fields, can be easily extender with adding more user object keys
     // or even with a dropdown / checkboxes to let user select what fields to filter for
     // not in scope of this test hence not implemented
     dispatch(filterUsers(value, ["name", "email"]));
-  }, [value]);
+  }, [value, dispatch]);
 
   /**
    * Set input label to either be in input or above it (when has value or is in focus) for better UX

@@ -2,21 +2,15 @@
 @import "../../commons/styles/colors.module.scss";
 
 :local(.container) {
-    width: 33%;
-    min-width: 300px;
+    width: 90%;
+    max-width: 400px;
     display: flex;
     display: -webkit-flex;
     flex-direction: column;
 
     position: relative;
     padding-top: 1.5rem;
-    @include tablet {
-        width: 66%;
-    }
-
-    @include phone {
-        width: 90%;
-    }
+    
 
     :local(.searchInput) {
         height: 2rem;

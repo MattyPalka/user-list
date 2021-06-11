@@ -1,0 +1,16 @@
+@import "../../../commons/styles/colors.module.scss";
+
+:local(.userDetailContainer) {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    background-color: $gray;
+    padding: 0.5rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+
+    strong {
+        text-transform: uppercase;
+        color: $secondaryColor;
+    }
+}

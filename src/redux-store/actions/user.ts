@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Dispatch } from "redux";
+import { SearchTypes } from "../../types/user";
 
 export const SET_USERS = "SET_USERS";
 export const FILTER_USERS = "FILTER_USERS";
@@ -28,9 +29,17 @@ export const setUsers = () => {
 /**
  * Filter all users for given chunk of user names
  * @param {string} searchValue values to filter for
+ * @param {array} searchField what user data fields should we filter for
  * @returns
  */
-export const filterUsers = (searchValue: string) => {
+export const filterUsers = (
+  searchValue: string,
+  searchFields: SearchTypes[]
+) => {
   return async (dispatch: Dispatch<any>) =>
-    dispatch({ type: FILTER_USERS, searchValue: searchValue.trim() });
+    dispatch({
+      type: FILTER_USERS,
+      searchValue: searchValue.trim(),
+      searchFields,
+    });
 };

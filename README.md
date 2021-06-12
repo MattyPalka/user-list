@@ -1,6 +1,11 @@
+# This is demo project
+
+This demo project uses React with Redux to fetch, display and filter users list from [JSON Placeholder API](https://jsonplaceholder.typicode.com/) and was bootstrapped from CRA (Learn more below). 
+
+
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

@@ -10,6 +10,10 @@ function App() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
 
+  /**
+   * Fetch all users from the API and save it in redux
+   * auto retry if fails for any reason
+   */
   const getAllUsers = useCallback(async () => {
     try {
       await dispatch(setUsers());
@@ -23,6 +27,7 @@ function App() {
   useEffect(() => {
     getAllUsers();
   }, [getAllUsers]);
+
   if (loading) {
     return <LoadingDots />;
   }

@@ -11,10 +11,8 @@ export const getUrl = (url: string) => {
   }
   // check if begins with http / https
   if (/^http:\/\/|https:\/\/.+/.test(url)) {
-    console.log("a");
     return url;
   } else {
-    console.log("b");
     return `http://${url}`;
   }
 };

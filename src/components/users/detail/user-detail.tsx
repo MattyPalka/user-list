@@ -4,7 +4,6 @@ import { user } from "../../../types/user";
 import style from "./style.module.scss";
 
 const UserDetail = ({ user }: { user: user }) => {
-  console.log(user);
   return (
     <div className={style.userDetailContainer}>
       <div>
